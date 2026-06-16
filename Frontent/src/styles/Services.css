@@ -1,0 +1,274 @@
+.servicesSection {
+  margin-bottom: 5rem;
+}
+
+/* Study Abroad Section */
+.studyAbroadHero {
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+  gap: 4rem;
+  align-items: center;
+  margin-bottom: 5rem;
+}
+
+.studyAbroadInfo {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.studyAbroadInfo h3 {
+  font-size: 2rem;
+}
+
+.studyAbroadInfo p {
+  font-size: 1.1rem;
+  color: var(--text-medium);
+  line-height: 1.7;
+}
+
+.servicesList {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.25rem;
+  margin-top: 1rem;
+}
+
+.serviceListItem {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--primary-navy);
+}
+
+.serviceListIcon {
+  color: var(--accent-red);
+  flex-shrink: 0;
+}
+
+/* Destination Flags Grid */
+.destinationsTitle {
+  text-align: center;
+  font-size: 1.5rem;
+  margin-bottom: 2rem;
+  color: var(--primary-navy);
+}
+
+.destinationsGrid {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+.destinationCard {
+  background-color: var(--bg-white);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-lg);
+  padding: 1.5rem;
+  text-align: center;
+  transition: var(--transition-normal);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  cursor: pointer;
+  box-shadow: var(--shadow-sm);
+}
+
+.destinationCard:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-md);
+  border-color: var(--accent-red);
+}
+
+/* Custom Flag Icon representations using CSS and icons */
+.flagIcon {
+  width: 56px;
+  height: 40px;
+  border-radius: 4px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Custom CSS Flags */
+.flag-uk {
+  background-color: #00247D;
+}
+.flag-uk::before {
+  content: '+';
+  color: #CF142B;
+  font-size: 2.25rem;
+  font-weight: 700;
+}
+.flag-australia {
+  background-color: #00008B;
+}
+.flag-australia::before {
+  content: '★';
+  color: #FFFFFF;
+  font-size: 1.25rem;
+}
+.flag-canada {
+  background: linear-gradient(90deg, #FF0000 25%, #FFFFFF 25%, #FFFFFF 75%, #FF0000 75%);
+}
+.flag-canada::before {
+  content: '🍁';
+  font-size: 1.1rem;
+}
+.flag-nz {
+  background-color: #00247D;
+}
+.flag-nz::before {
+  content: '★';
+  color: #CF142B;
+  font-size: 1rem;
+}
+.flag-ireland {
+  background: linear-gradient(90deg, #169B62 33.3%, #FFFFFF 33.3%, #FFFFFF 66.6%, #FF883E 66.6%);
+}
+.flag-usa {
+  background: repeating-linear-gradient(#B22234, #B22234 3px, #FFFFFF 3px, #FFFFFF 6px);
+}
+.flag-usa::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 50%;
+  height: 50%;
+  background-color: #3C3B6E;
+}
+
+.destinationName {
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--primary-navy);
+}
+
+/* University Placement & Careers Section */
+.placementSection {
+  background-color: var(--bg-light);
+  border-top: 1px solid var(--border-color);
+  border-bottom: 1px solid var(--border-color);
+}
+
+.splitSectionGrid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 4rem;
+}
+
+.serviceCard {
+  background-color: var(--bg-white);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-xl);
+  padding: 3rem 2.5rem;
+  box-shadow: var(--shadow-md);
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  transition: var(--transition-normal);
+}
+
+.serviceCard:hover {
+  box-shadow: var(--shadow-lg);
+}
+
+.serviceHeader {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.serviceHeaderIcon {
+  width: 50px;
+  height: 50px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--accent-red-light);
+  color: var(--accent-red);
+  font-size: 1.25rem;
+}
+
+.serviceCard:nth-child(2) .serviceHeaderIcon {
+  background-color: var(--accent-gold-light);
+  color: var(--accent-gold-hover);
+}
+
+.serviceHeader h3 {
+  font-size: 1.5rem;
+}
+
+.serviceCardText {
+  color: var(--text-medium);
+  font-size: 1.05rem;
+  line-height: 1.6;
+}
+
+.subList {
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+}
+
+.subListItem {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--text-dark);
+  border-bottom: 1px dashed var(--border-color);
+  padding-bottom: 0.5rem;
+}
+
+.subListItem:last-child {
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
+.subListBullet {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background-color: var(--accent-red);
+}
+
+.serviceCard:nth-child(2) .subListBullet {
+  background-color: var(--accent-gold);
+}
+
+@media (max-width: 1024px) {
+  .destinationsGrid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .splitSectionGrid {
+    grid-template-columns: 1fr;
+    gap: 4rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .studyAbroadHero {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .destinationsGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .servicesList {
+    grid-template-columns: 1fr;
+  }
+}

@@ -1,0 +1,362 @@
+.coursesFilterContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+  margin-bottom: 3rem;
+}
+
+/* Tab Switcher */
+.tabsWrapper {
+  display: flex;
+  background-color: var(--bg-light);
+  padding: 0.35rem;
+  border-radius: 50px;
+  border: 1px solid var(--border-color);
+  max-width: 600px;
+  width: 100%;
+}
+
+.tabBtn {
+  flex: 1;
+  padding: 0.85rem 1.5rem;
+  border-radius: 50px;
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--text-medium);
+  transition: var(--transition-normal);
+  text-align: center;
+  white-space: nowrap;
+}
+
+.tabBtn:hover {
+  color: var(--primary-navy);
+}
+
+.activeTabBtn {
+  background-color: var(--primary-navy);
+  color: var(--bg-white) !important;
+  box-shadow: var(--shadow-md);
+}
+
+/* Search Bar */
+.searchWrapper {
+  position: relative;
+  max-width: 450px;
+  width: 100%;
+}
+
+.searchInput {
+  width: 100%;
+  padding: 0.85rem 1rem 0.85rem 2.75rem;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--border-color);
+  font-family: var(--font-sans);
+  font-size: 0.95rem;
+  color: var(--text-dark);
+  transition: var(--transition-fast);
+  background-color: var(--bg-white);
+  box-shadow: var(--shadow-sm);
+}
+
+.searchInput:focus {
+  border-color: var(--accent-red);
+  box-shadow: 0 0 0 3px rgba(186, 37, 37, 0.15);
+  outline: none;
+}
+
+.searchIcon {
+  position: absolute;
+  left: 1rem;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--text-light);
+  pointer-events: none;
+}
+
+/* Course Cards Grid */
+.coursesGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+  min-height: 300px;
+}
+
+.courseCard {
+  background-color: var(--bg-white);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-lg);
+  padding: 2.25rem 2rem;
+  box-shadow: var(--shadow-sm);
+  transition: var(--transition-normal);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 1.5rem;
+  position: relative;
+}
+
+.courseCard:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-xl);
+  border-color: transparent;
+}
+
+.courseBadge {
+  position: absolute;
+  top: 1.5rem;
+  right: 1.5rem;
+  background-color: var(--accent-gold-light);
+  color: var(--accent-gold-hover);
+  padding: 0.25rem 0.75rem;
+  border-radius: 50px;
+  font-size: 0.75rem;
+  font-weight: 700;
+}
+
+.courseCardContent {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.courseDuration {
+  font-size: 0.85rem;
+  color: var(--accent-red);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+.courseTitle {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--primary-navy);
+  line-height: 1.3;
+  padding-right: 2rem; /* Avoid overlap with badge */
+}
+
+.courseDesc {
+  font-size: 0.95rem;
+  color: var(--text-medium);
+  line-height: 1.5;
+}
+
+.courseFooter {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-top: 1px solid var(--border-color);
+  padding-top: 1.25rem;
+}
+
+.courseDetailsBtn {
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: var(--primary-navy);
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+  transition: var(--transition-fast);
+}
+
+.courseDetailsBtn:hover {
+  color: var(--accent-red);
+}
+
+.noCourses {
+  grid-column: 1 / -1;
+  text-align: center;
+  padding: 4rem 2rem;
+  color: var(--text-medium);
+  background-color: var(--bg-light);
+  border-radius: var(--radius-lg);
+  border: 1px dashed var(--border-color);
+}
+
+/* Modal styling */
+.modalOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(9, 26, 44, 0.6);
+  backdrop-filter: blur(5px);
+  z-index: 1005;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+}
+
+.modalOverlay.show {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.modalContent {
+  background-color: var(--bg-white);
+  width: 100%;
+  max-width: 650px;
+  border-radius: var(--radius-xl);
+  box-shadow: var(--shadow-xl);
+  overflow: hidden;
+  position: relative;
+  border-top: 5px solid var(--accent-red);
+  transform: scale(0.9);
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  display: flex;
+  flex-direction: column;
+  max-height: 90vh;
+}
+
+.modalOverlay.show .modalContent {
+  transform: scale(1);
+}
+
+.modalHeader {
+  padding: 2rem 2rem 1rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.modalTitleArea {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.modalCloseBtn {
+  font-size: 1.5rem;
+  color: var(--text-light);
+  transition: var(--transition-fast);
+  padding: 0.25rem;
+  border-radius: 50%;
+  background-color: var(--bg-light);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+}
+
+.modalCloseBtn:hover {
+  color: var(--accent-red);
+  background-color: var(--accent-red-light);
+}
+
+.modalBody {
+  padding: 1rem 2rem 2rem 2rem;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.modalMetaGrid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+  background-color: var(--bg-light);
+  padding: 1.25rem;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--border-color);
+}
+
+.metaItem {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.metaIcon {
+  color: var(--accent-red);
+  flex-shrink: 0;
+}
+
+.metaLabel {
+  font-size: 0.8rem;
+  color: var(--text-light);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  display: block;
+}
+
+.metaVal {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--primary-navy);
+}
+
+.modalSection {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.modalSection h4 {
+  font-size: 1.15rem;
+  color: var(--primary-navy);
+  border-bottom: 2px solid var(--border-color);
+  padding-bottom: 0.35rem;
+}
+
+.syllabusList {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.syllabusItem {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.5rem;
+  font-size: 0.95rem;
+  color: var(--text-medium);
+}
+
+.syllabusItem svg {
+  color: var(--accent-gold);
+  margin-top: 0.25rem;
+  flex-shrink: 0;
+}
+
+.modalFooter {
+  padding: 1.5rem 2rem;
+  border-top: 1px solid var(--border-color);
+  display: flex;
+  justify-content: flex-end;
+  gap: 1rem;
+  background-color: var(--bg-light);
+}
+
+@media (max-width: 1024px) {
+  .coursesGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .coursesGrid {
+    grid-template-columns: 1fr;
+  }
+  .tabsWrapper {
+    flex-direction: column;
+    border-radius: var(--radius-lg);
+    padding: 0.5rem;
+  }
+  .tabBtn {
+    border-radius: var(--radius-md);
+  }
+  .modalMetaGrid {
+    grid-template-columns: 1fr;
+  }
+}
