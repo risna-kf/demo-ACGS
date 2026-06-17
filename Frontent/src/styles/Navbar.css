@@ -5,28 +5,28 @@
   width: 100%;
   z-index: 1000;
   transition: var(--transition-normal);
-  background-color: rgba(255, 255, 255, 0.95);
-  backdrop-filter: blur(10px);
-  border-bottom: 1px solid var(--border-color);
-  box-shadow: var(--shadow-sm);
+  background-color: var(--glass-bg);
+  backdrop-filter: var(--glass-blur);
+  -webkit-backdrop-filter: var(--glass-blur);
+  border-bottom: var(--glass-border);
+  box-shadow: var(--tonal-lift-shadow);
 }
 
 .header.scrolled {
   background-color: var(--bg-white);
-  box-shadow: var(--shadow-md);
-  border-bottom: 1px solid transparent;
+  border-bottom: var(--tonal-lift-border);
 }
 
 .navContainer {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  height: 80px;
+  height: 76px;
   transition: var(--transition-normal);
 }
 
 .header.scrolled .navContainer {
-  height: 70px;
+  height: 68px;
 }
 
 .logoContainer {
@@ -37,15 +37,17 @@
 }
 
 .logo {
-  height: 52px;
-  width: 52px;
+  height: 48px;
+  width: 48px;
   object-fit: contain;
+  border-radius: 50%;
+  border: 1px solid var(--border-color);
   transition: var(--transition-normal);
 }
 
 .header.scrolled .logo {
-  height: 44px;
-  width: 44px;
+  height: 42px;
+  width: 42px;
 }
 
 .brandText {
@@ -54,19 +56,21 @@
 }
 
 .brandName {
-  font-size: 1.2rem;
-  font-weight: 800;
+  font-family: var(--font-headline);
+  font-size: 1.25rem;
+  font-weight: 700;
   color: var(--primary-navy);
   letter-spacing: -0.02em;
   line-height: 1.1;
 }
 
 .brandTagline {
-  font-size: 0.75rem;
-  font-weight: 500;
-  color: var(--accent-red);
+  font-size: 0.7rem;
+  font-weight: 600;
+  color: var(--accent-gold);
   letter-spacing: 0.05em;
   text-transform: uppercase;
+  margin-top: 1px;
 }
 
 .desktopNav {
@@ -82,15 +86,16 @@
 }
 
 .navLink {
-  font-size: 0.95rem;
+  font-size: 0.9rem;
   font-weight: 600;
-  color: var(--primary-navy-light);
-  padding: 0.5rem 0;
+  color: var(--primary-navy);
+  padding: 0.5rem 0.25rem;
   position: relative;
+  transition: var(--transition-normal);
 }
 
 .navLink:hover {
-  color: var(--accent-red);
+  color: var(--accent-gold);
 }
 
 .navLink::after {
@@ -100,7 +105,7 @@
   left: 0;
   width: 0;
   height: 2px;
-  background: linear-gradient(90deg, var(--accent-red) 0%, var(--accent-gold) 100%);
+  background-color: var(--accent-gold);
   transition: var(--transition-normal);
 }
 
@@ -109,28 +114,25 @@
 }
 
 .activeNavLink {
-  color: var(--accent-red);
+  color: var(--accent-gold);
 }
 
 .activeNavLink::after {
   width: 100%;
+  background-color: var(--accent-gold);
 }
 
 .ctaBtn {
   font-size: 0.85rem;
   padding: 0.6rem 1.25rem;
-  border-radius: var(--radius-md);
+  border-radius: var(--radius-btn);
   font-weight: 700;
-  background-color: var(--accent-red);
+  background-color: var(--primary-navy);
   color: var(--bg-white);
-  box-shadow: 0 4px 6px -1px rgba(186, 37, 37, 0.15);
-  transition: var(--transition-fast);
 }
 
 .ctaBtn:hover {
-  background-color: var(--accent-red-hover);
-  transform: translateY(-1px);
-  box-shadow: 0 6px 12px -1px rgba(186, 37, 37, 0.25);
+  background-color: var(--primary-hover);
 }
 
 .mobileMenuBtn {
@@ -140,22 +142,24 @@
   padding: 0.25rem;
 }
 
-/* Mobile Drawer Styles */
+/* Mobile Drawer Styles (using glass pane effect) */
 .mobileDrawer {
   position: fixed;
   top: 0;
   right: 0;
-  width: 300px;
+  width: 280px;
   height: 100vh;
-  background-color: var(--bg-white);
-  box-shadow: var(--shadow-xl);
+  background-color: var(--glass-bg);
+  backdrop-filter: var(--glass-blur);
+  -webkit-backdrop-filter: var(--glass-blur);
+  box-shadow: var(--tonal-lift-shadow);
   z-index: 1001;
   padding: 2rem;
   display: flex;
   flex-direction: column;
   transform: translateX(100%);
-  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
-  border-left: 1px solid var(--border-color);
+  transition: transform 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+  border-left: var(--glass-border);
 }
 
 .mobileDrawer.open {
@@ -168,7 +172,7 @@
   left: 0;
   width: 100vw;
   height: 100vh;
-  background-color: rgba(9, 26, 44, 0.4);
+  background-color: rgba(27, 43, 72, 0.2);
   backdrop-filter: blur(4px);
   z-index: 1000;
   opacity: 0;
@@ -189,27 +193,28 @@
 }
 
 .drawerCloseBtn {
-  font-size: 1.75rem;
+  font-size: 1.5rem;
   color: var(--primary-navy);
 }
 
 .drawerLinks {
   display: flex;
   flex-direction: column;
-  gap: 1.5rem;
+  gap: 1.25rem;
   margin-bottom: 3rem;
 }
 
 .drawerLink {
-  font-size: 1.15rem;
+  font-size: 1.1rem;
   font-weight: 600;
   color: var(--primary-navy);
   padding: 0.5rem 0;
   border-bottom: 1px solid var(--border-color);
+  text-align: left;
 }
 
 .drawerLink:hover, .activeDrawerLink {
-  color: var(--accent-red);
+  color: var(--accent-gold);
   padding-left: 0.5rem;
 }
 
@@ -221,9 +226,9 @@
 .drawerCtaBtn {
   width: 100%;
   padding: 0.85rem;
-  border-radius: var(--radius-md);
+  border-radius: var(--radius-btn);
   font-weight: 700;
-  background-color: var(--accent-red);
+  background-color: var(--primary-navy);
   color: var(--bg-white);
 }
 
@@ -233,18 +238,5 @@
   }
   .mobileMenuBtn {
     display: block;
-  }
-}
-
-@media (max-width: 480px) {
-  .brandName {
-    font-size: 1rem;
-  }
-  .brandTagline {
-    font-size: 0.65rem;
-  }
-  .logo {
-    height: 40px;
-    width: 40px;
   }
 }

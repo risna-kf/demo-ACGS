@@ -141,13 +141,13 @@ export default function Admissions() {
               return (
                 <div key={idx} className="careerCategoryCard">
                   <div className="careerCategoryHeader">
-                    <SectorIcon size={20} />
+                    <SectorIcon size={20} strokeWidth={1.5} style={{ color: 'var(--primary-navy)' }} />
                     <h3>{item.sector}</h3>
                   </div>
                   <div className="careerList">
                     {item.roles.map((role, rIdx) => (
                       <div key={rIdx} className="careerRole">
-                        <Check size={16} />
+                        <Check size={16} strokeWidth={1.5} style={{ color: 'var(--primary-navy)' }} />
                         <span>{role}</span>
                       </div>
                     ))}

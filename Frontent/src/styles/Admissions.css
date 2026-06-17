@@ -6,9 +6,9 @@
 .tableWrapper {
   width: 100%;
   overflow-x: auto;
-  border-radius: var(--radius-xl);
-  border: 1px solid var(--border-color);
-  box-shadow: var(--shadow-md);
+  border-radius: var(--radius-card);
+  border: var(--tonal-lift-border);
+  box-shadow: var(--tonal-lift-shadow);
   background-color: var(--bg-white);
 }
 
@@ -25,19 +25,20 @@
   padding: 1.25rem 1.5rem;
   font-weight: 700;
   font-size: 1.05rem;
+  font-family: var(--font-headline);
 }
 
 .reqTable th:first-child {
-  border-top-left-radius: var(--radius-lg);
+  border-top-left-radius: var(--radius-card);
 }
 
 .reqTable th:last-child {
-  border-top-right-radius: var(--radius-lg);
+  border-top-right-radius: var(--radius-card);
 }
 
 .reqTable td {
   padding: 1.25rem 1.5rem;
-  border-bottom: 1px solid var(--border-color);
+  border-bottom: var(--tonal-lift-border);
   font-size: 0.95rem;
   color: var(--text-dark);
 }
@@ -47,7 +48,7 @@
 }
 
 .reqTable tr:nth-child(even) {
-  background-color: var(--bg-light);
+  background-color: rgba(27, 43, 72, 0.02);
 }
 
 .levelBadge {
@@ -61,25 +62,25 @@
 }
 
 .badge-cert {
-  background-color: var(--accent-gold-light);
-  color: var(--accent-gold-hover);
+  background-color: var(--border-color);
+  color: var(--primary-navy);
 }
 
 .badge-dip {
-  background-color: var(--accent-red-light);
-  color: var(--accent-red);
+  background-color: rgba(212, 175, 55, 0.1);
+  color: var(--accent-gold);
 }
 
 .badge-hnd {
-  background-color: #E0F2FE;
-  color: #0369A1;
+  background-color: rgba(27, 43, 72, 0.05);
+  color: var(--primary-navy);
 }
 
 /* Stepper Component */
 .stepperContainer {
-  background-color: var(--bg-light);
-  border-top: 1px solid var(--border-color);
-  border-bottom: 1px solid var(--border-color);
+  background-color: var(--bg-white); /* Keep Canvas Pure White */
+  border-top: var(--tonal-lift-border);
+  border-bottom: var(--tonal-lift-border);
 }
 
 .stepperWrapper {
@@ -109,7 +110,7 @@
   top: 25px;
   left: 5%;
   height: 4px;
-  background: linear-gradient(90deg, var(--accent-red) 0%, var(--accent-gold) 100%);
+  background-color: var(--primary-navy);
   z-index: 1;
   transition: width 0.4s ease;
 }
@@ -125,8 +126,8 @@
 }
 
 .stepCircle {
-  width: 54px;
-  height: 54px;
+  width: 50px;
+  height: 50px;
   border-radius: 50%;
   background-color: var(--bg-white);
   border: 3px solid var(--border-color);
@@ -134,35 +135,35 @@
   align-items: center;
   justify-content: center;
   font-weight: 700;
-  font-size: 1.15rem;
+  font-size: 1.1rem;
   color: var(--text-light);
   transition: var(--transition-normal);
 }
 
 .stepNode.active .stepCircle {
-  border-color: var(--accent-red);
-  color: var(--accent-red);
-  box-shadow: 0 0 0 5px rgba(186, 37, 37, 0.15);
-  transform: scale(1.1);
+  border-color: var(--primary-navy);
+  color: var(--primary-navy);
+  box-shadow: 0 0 0 5px rgba(27, 43, 72, 0.08);
+  transform: scale(1.05);
 }
 
 .stepNode.completed .stepCircle {
   border-color: var(--accent-gold);
   background-color: var(--accent-gold);
-  color: var(--primary-navy-dark);
+  color: var(--primary-navy);
 }
 
 .stepLabel {
   margin-top: 1rem;
   font-size: 0.95rem;
   font-weight: 700;
-  color: var(--text-medium);
+  color: var(--text-light);
   text-align: center;
   transition: var(--transition-normal);
 }
 
 .stepNode.active .stepLabel {
-  color: var(--accent-red);
+  color: var(--primary-navy);
 }
 
 .stepNode.completed .stepLabel {
@@ -171,12 +172,12 @@
 
 .stepDetailsCard {
   background-color: var(--bg-white);
-  border: 1px solid var(--border-color);
-  border-radius: var(--radius-lg);
+  border: var(--tonal-lift-border);
+  border-radius: var(--radius-card);
   padding: 2.5rem;
   max-width: 600px;
   margin: 2rem auto 0 auto;
-  box-shadow: var(--shadow-md);
+  box-shadow: var(--tonal-lift-shadow);
   text-align: center;
   display: flex;
   flex-direction: column;
@@ -187,10 +188,11 @@
 .stepDetailsCard h4 {
   font-size: 1.35rem;
   color: var(--primary-navy);
+  font-weight: 700;
 }
 
 .stepDetailsCard p {
-  color: var(--text-medium);
+  color: var(--text-body);
   line-height: 1.6;
 }
 
@@ -206,10 +208,11 @@
 }
 
 .careerCategoryCard {
-  background-color: var(--bg-light);
-  border: 1px solid var(--border-color);
-  border-radius: var(--radius-lg);
+  background-color: var(--bg-white);
+  border: var(--tonal-lift-border);
+  border-radius: var(--radius-card);
   padding: 2.25rem 2rem;
+  box-shadow: var(--tonal-lift-shadow);
   transition: var(--transition-normal);
   display: flex;
   flex-direction: column;
@@ -217,10 +220,9 @@
 }
 
 .careerCategoryCard:hover {
-  background-color: var(--bg-white);
-  box-shadow: var(--shadow-lg);
+  transform: translateY(-4px);
+  box-shadow: 0 12px 30px rgba(27, 43, 72, 0.08);
   border-color: var(--accent-gold);
-  transform: translateY(-3px);
 }
 
 .careerCategoryHeader {
@@ -232,12 +234,13 @@
 }
 
 .careerCategoryHeader svg {
-  color: var(--accent-red);
+  color: var(--primary-navy);
   flex-shrink: 0;
 }
 
 .careerCategoryHeader h3 {
   font-size: 1.25rem;
+  font-weight: 700;
 }
 
 .careerList {
@@ -252,7 +255,7 @@
   gap: 0.5rem;
   font-size: 0.95rem;
   font-weight: 600;
-  color: var(--text-medium);
+  color: var(--text-body);
 }
 
 .careerRole svg {
@@ -284,7 +287,7 @@
     left: 45px;
     top: 5%;
     width: 4px;
-    height: 0; /* JS handles vertical height on mobile or we can make it stack simpler */
+    height: 0;
   }
   .stepNode {
     flex-direction: row;
@@ -295,6 +298,9 @@
   .stepLabel {
     margin-top: 0;
     text-align: left;
+  }
+  .stepDetailsCard {
+    padding: 2rem;
   }
 }
 

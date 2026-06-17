@@ -62,7 +62,7 @@ export default function About() {
           {/* Vision */}
           <div className="vmCard">
             <div className="vmIconWrapper">
-              <Eye size={28} />
+              <Eye size={28} strokeWidth={1.5} />
             </div>
             <h3>Our Vision</h3>
             <p>
@@ -73,7 +73,7 @@ export default function About() {
           {/* Mission */}
           <div className="vmCard">
             <div className="vmIconWrapper">
-              <Target size={28} />
+              <Target size={28} strokeWidth={1.5} />
             </div>
             <h3>Our Mission</h3>
             <p>
@@ -95,10 +95,11 @@ export default function About() {
           <div className="valuesGrid">
             {coreValues.map((val, index) => {
               const ValueIcon = val.icon;
+              const isAchievement = ValueIcon === Award || ValueIcon === GraduationCap;
               return (
                 <div key={index} className="valueCard">
-                  <div className="valueIcon">
-                    <ValueIcon size={22} />
+                  <div className="valueIcon" style={{ color: isAchievement ? 'var(--accent-gold)' : 'var(--primary-navy)' }}>
+                    <ValueIcon size={22} strokeWidth={1.5} />
                   </div>
                   <h3 className="valueName">{val.name}</h3>
                   <p className="valueDesc">{val.desc}</p>

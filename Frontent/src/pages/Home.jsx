@@ -87,7 +87,7 @@ export default function Home() {
         <div className="container heroContent">
           <div className="heroText animate-fade-in">
             <div className="heroBadge">
-              <Award size={16} /> <span>Sri Lanka Academic Hub</span>
+              <Award size={16} strokeWidth={1.5} style={{ color: 'var(--accent-gold)' }} /> <span>Sri Lanka Academic Hub</span>
             </div>
             <h1 className="heroTitle">
               Australian College of <br />
@@ -102,7 +102,7 @@ export default function Home() {
                 className="btn btn-primary"
                 onClick={() => handleScrollToSection('contact')}
               >
-                Apply Now <ArrowRight size={16} />
+                Apply Now <ArrowRight size={16} strokeWidth={1.5} />
               </button>
               <button 
                 className="btn btn-outline"
@@ -167,11 +167,11 @@ export default function Home() {
             </p>
             <div style={{ display: 'flex', flexDirection: 'column', gap: '0.75rem', marginTop: '0.5rem' }}>
               <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', fontWeight: 600, color: 'var(--primary-navy)' }}>
-                <CheckCircle size={18} style={{ color: 'var(--accent-gold)' }} />
+                <CheckCircle size={18} strokeWidth={1.5} style={{ color: 'var(--accent-gold)' }} />
                 <span>Professionally Designed Curriculums</span>
               </div>
               <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', fontWeight: 600, color: 'var(--primary-navy)' }}>
-                <CheckCircle size={18} style={{ color: 'var(--accent-gold)' }} />
+                <CheckCircle size={18} strokeWidth={1.5} style={{ color: 'var(--accent-gold)' }} />
                 <span>Located in the heart of Batticaloa</span>
               </div>
             </div>
@@ -198,10 +198,11 @@ export default function Home() {
           <div className="cardsGrid">
             {whyChooseItems.map((item, index) => {
               const Icon = item.icon;
+              const isAchievement = Icon === GraduationCap;
               return (
                 <div key={index} className="featureCard">
-                  <div className="iconWrapper">
-                    <Icon size={22} />
+                  <div className="iconWrapper" style={{ color: isAchievement ? 'var(--accent-gold)' : 'var(--primary-navy)' }}>
+                    <Icon size={22} strokeWidth={1.5} />
                   </div>
                   <h3 className="featureTitle">{item.title}</h3>
                   <p className="featureDesc">{item.desc}</p>
@@ -240,7 +241,7 @@ export default function Home() {
                     className="overviewCardLink"
                     onClick={() => handleScrollToSection('courses')}
                   >
-                    View Curriculums <ArrowUpRight size={14} />
+                    View Curriculums <ArrowUpRight size={14} strokeWidth={1.5} />
                   </button>
                 </div>
               </div>

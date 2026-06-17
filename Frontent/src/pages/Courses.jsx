@@ -69,7 +69,7 @@ export default function Courses() {
           </div>
 
           <div className="searchWrapper">
-            <Search className="searchIcon" size={18} />
+            <Search className="searchIcon" size={18} strokeWidth={1.5} style={{ color: 'var(--primary-navy)' }} />
             <input 
               type="text" 
               placeholder="Search course title, syllabus, keywords..." 
@@ -107,14 +107,14 @@ export default function Courses() {
                     className="courseDetailsBtn"
                     onClick={() => handleOpenDetails(course)}
                   >
-                    View Syllabus <Info size={14} style={{ marginLeft: '0.1rem' }} />
+                    View Syllabus <Info size={14} strokeWidth={1.5} style={{ marginLeft: '0.25rem', color: 'var(--primary-navy)' }} />
                   </button>
                 </div>
               </div>
             ))
           ) : (
             <div className="noCourses">
-              <HelpCircle size={36} style={{ color: 'var(--text-light)', marginBottom: '0.5rem' }} />
+              <HelpCircle size={36} strokeWidth={1.5} style={{ color: 'var(--primary-navy)', marginBottom: '0.5rem' }} />
               <h4>No courses found matching "{searchQuery}"</h4>
               <p style={{ color: 'var(--text-light)', fontSize: '0.9rem', marginTop: '0.25rem' }}>
                 Try selecting a different academic level or revising your search term.

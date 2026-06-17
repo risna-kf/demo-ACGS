@@ -78,13 +78,13 @@ export default function AdmissionsStepper() {
             width: '60px',
             height: '60px',
             borderRadius: '50%',
-            backgroundColor: 'var(--accent-red-light)',
-            color: 'var(--accent-red)',
+            backgroundColor: 'rgba(27, 43, 72, 0.05)',
+            color: 'var(--primary-navy)',
             display: 'flex',
             alignItems: 'center',
             justifyContent: 'center'
           }}>
-            <ActiveIcon size={28} />
+            <ActiveIcon size={28} strokeWidth={1.5} style={{ color: 'var(--primary-navy)' }} />
           </div>
         </div>
         <h4>{steps[activeStep].title}</h4>

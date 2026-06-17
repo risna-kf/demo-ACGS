@@ -1,8 +1,8 @@
 .footer {
-  background-color: var(--primary-navy-dark);
+  background-color: var(--primary-navy);
   color: #E2E8F0;
   padding: 5rem 0 2rem 0;
-  border-top: 4px solid var(--accent-red);
+  border-top: 4px solid var(--accent-gold);
 }
 
 .footerGrid {
@@ -25,20 +25,23 @@
 }
 
 .footerLogo {
-  height: 56px;
-  width: 56px;
+  height: 52px;
+  width: 52px;
   object-fit: contain;
+  border-radius: 50%;
+  border: 1px solid rgba(255, 255, 255, 0.15);
 }
 
 .footerBrandName {
+  font-family: var(--font-headline);
   font-size: 1.3rem;
-  font-weight: 800;
+  font-weight: 700;
   color: var(--bg-white);
   line-height: 1.2;
 }
 
 .footerBrandTagline {
-  font-size: 0.8rem;
+  font-size: 0.75rem;
   font-weight: 600;
   color: var(--accent-gold);
   text-transform: uppercase;
@@ -54,11 +57,13 @@
 
 .footerHeading {
   color: var(--bg-white);
-  font-size: 1.15rem;
+  font-size: 1.1rem;
   font-weight: 700;
   margin-bottom: 1.5rem;
   position: relative;
   padding-bottom: 0.5rem;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
 }
 
 .footerHeading::after {
@@ -66,7 +71,7 @@
   position: absolute;
   bottom: 0;
   left: 0;
-  width: 30px;
+  width: 28px;
   height: 2px;
   background-color: var(--accent-gold);
 }
@@ -80,7 +85,7 @@
 .footerLink {
   color: #94A3B8;
   font-size: 0.95rem;
-  transition: var(--transition-fast);
+  transition: var(--transition-normal);
   cursor: pointer;
   display: flex;
   align-items: center;
@@ -169,12 +174,12 @@
   border-radius: 50%;
   background-color: rgba(255, 255, 255, 0.05);
   color: #94A3B8;
-  transition: var(--transition-fast);
+  transition: var(--transition-normal);
 }
 
 .socialBtn:hover {
   background-color: var(--accent-gold);
-  color: var(--primary-navy-dark);
+  color: var(--primary-navy);
   transform: translateY(-2px);
 }
 

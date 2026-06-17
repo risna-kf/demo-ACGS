@@ -31,7 +31,7 @@ export default function CourseModal({ isOpen, onClose, course }) {
             <h3 className="courseTitle" style={{ marginTop: '0.5rem', fontSize: '1.5rem' }}>{course.title}</h3>
           </div>
           <button className="modalCloseBtn" onClick={onClose} aria-label="Close modal">
-            <X size={18} />
+            <X size={18} strokeWidth={1.5} style={{ color: 'var(--primary-navy)' }} />
           </button>
         </div>
 
@@ -42,7 +42,7 @@ export default function CourseModal({ isOpen, onClose, course }) {
 
           <div className="modalMetaGrid">
             <div className="metaItem">
-              <Clock className="metaIcon" size={20} />
+              <Clock className="metaIcon" size={20} strokeWidth={1.5} style={{ color: 'var(--primary-navy)' }} />
               <div>
                 <span className="metaLabel">Duration</span>
                 <span className="metaVal">{course.duration}</span>
@@ -50,7 +50,7 @@ export default function CourseModal({ isOpen, onClose, course }) {
             </div>
             
             <div className="metaItem">
-              <Award className="metaIcon" size={20} />
+              <Award className="metaIcon" size={20} strokeWidth={1.5} style={{ color: 'var(--accent-gold)' }} />
               <div>
                 <span className="metaLabel">Requirements</span>
                 <span className="metaVal">{course.requirements}</span>
@@ -63,7 +63,7 @@ export default function CourseModal({ isOpen, onClose, course }) {
             <div className="syllabusList">
               {course.syllabus.map((item, index) => (
                 <div key={index} className="syllabusItem">
-                  <Check size={16} style={{ marginTop: '0.2rem' }} />
+                  <Check size={16} strokeWidth={1.5} style={{ marginTop: '0.2rem', color: 'var(--primary-navy)' }} />
                   <span>{item}</span>
                 </div>
               ))}

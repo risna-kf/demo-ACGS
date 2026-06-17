@@ -98,7 +98,7 @@ export default function Contact() {
               <div className="detailsList">
                 <div className="detailsItem">
                   <div className="detailsIconWrapper">
-                    <MapPin size={20} />
+                    <MapPin size={20} strokeWidth={1.5} style={{ color: 'var(--primary-navy)' }} />
                   </div>
                   <div className="detailsText">
                     <span className="detailsLabel">Address</span>
@@ -108,7 +108,7 @@ export default function Contact() {
                 
                 <div className="detailsItem">
                   <div className="detailsIconWrapper">
-                    <Phone size={20} />
+                    <Phone size={20} strokeWidth={1.5} style={{ color: 'var(--primary-navy)' }} />
                   </div>
                   <div className="detailsText">
                     <span className="detailsLabel">Phone Number</span>
@@ -118,7 +118,7 @@ export default function Contact() {
 
                 <div className="detailsItem">
                   <div className="detailsIconWrapper">
-                    <Mail size={20} />
+                    <Mail size={20} strokeWidth={1.5} style={{ color: 'var(--primary-navy)' }} />
                   </div>
                   <div className="detailsText">
                     <span className="detailsLabel">Email Address</span>
@@ -180,7 +180,7 @@ export default function Contact() {
             
             {isSuccess && (
               <div className="successMsg">
-                <CheckCircle2 size={18} />
+                <CheckCircle2 size={18} strokeWidth={1.5} style={{ marginRight: '0.25rem' }} />
                 <span>Enquiry sent successfully! We will get back to you shortly.</span>
               </div>
             )}
@@ -270,7 +270,7 @@ export default function Contact() {
               >
                 {isSubmitting ? 'Sending inquiry...' : (
                   <>
-                    Send Inquiry <Send size={14} />
+                    Send Inquiry <Send size={14} strokeWidth={1.5} />
                   </>
                 )}
               </button>

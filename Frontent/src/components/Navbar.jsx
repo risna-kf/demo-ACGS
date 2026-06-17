@@ -87,7 +87,7 @@ export default function Navbar() {
               className="btn ctaBtn"
               onClick={() => handleNavClick('contact')}
             >
-              Apply Now <ArrowRight size={14} style={{ marginLeft: '0.25rem' }} />
+              Apply Now <ArrowRight size={14} strokeWidth={1.5} style={{ marginLeft: '0.25rem' }} />
             </button>
           </nav>
 
@@ -97,7 +97,7 @@ export default function Navbar() {
             onClick={() => setIsDrawerOpen(true)}
             aria-label="Open mobile menu"
           >
-            <Menu size={24} />
+            <Menu size={24} strokeWidth={1.5} style={{ color: 'var(--primary-navy)' }} />
           </button>
         </div>
       </header>
@@ -120,7 +120,7 @@ export default function Navbar() {
             onClick={() => setIsDrawerOpen(false)}
             aria-label="Close mobile menu"
           >
-            <X size={24} />
+            <X size={24} strokeWidth={1.5} style={{ color: 'var(--primary-navy)' }} />
           </button>
         </div>
 

@@ -5,7 +5,7 @@
 /* Study Abroad Section */
 .studyAbroadHero {
   display: grid;
-  grid-template-columns: 1fr 1.2fr;
+  grid-template-columns: 1.1fr 0.9fr;
   gap: 4rem;
   align-items: center;
   margin-bottom: 5rem;
@@ -18,13 +18,15 @@
 }
 
 .studyAbroadInfo h3 {
-  font-size: 2rem;
+  font-size: 2.25rem;
+  font-weight: 700;
+  line-height: 1.25;
 }
 
 .studyAbroadInfo p {
-  font-size: 1.1rem;
-  color: var(--text-medium);
-  line-height: 1.7;
+  font-size: 1.05rem;
+  color: var(--text-body);
+  line-height: 1.6;
 }
 
 .servicesList {
@@ -44,15 +46,16 @@
 }
 
 .serviceListIcon {
-  color: var(--accent-red);
+  color: var(--primary-navy);
   flex-shrink: 0;
 }
 
 /* Destination Flags Grid */
 .destinationsTitle {
   text-align: center;
-  font-size: 1.5rem;
-  margin-bottom: 2rem;
+  font-size: 1.65rem;
+  font-weight: 700;
+  margin-bottom: 2.5rem;
   color: var(--primary-navy);
 }
 
@@ -65,9 +68,9 @@
 
 .destinationCard {
   background-color: var(--bg-white);
-  border: 1px solid var(--border-color);
-  border-radius: var(--radius-lg);
-  padding: 1.5rem;
+  border: var(--tonal-lift-border);
+  border-radius: var(--radius-card);
+  padding: 1.5rem 1rem;
   text-align: center;
   transition: var(--transition-normal);
   display: flex;
@@ -75,21 +78,21 @@
   align-items: center;
   gap: 1rem;
   cursor: pointer;
-  box-shadow: var(--shadow-sm);
+  box-shadow: var(--tonal-lift-shadow);
 }
 
 .destinationCard:hover {
-  transform: translateY(-5px);
-  box-shadow: var(--shadow-md);
-  border-color: var(--accent-red);
+  transform: translateY(-4px);
+  box-shadow: 0 12px 30px rgba(27, 43, 72, 0.08);
+  border-color: var(--accent-gold);
 }
 
-/* Custom Flag Icon representations using CSS and icons */
+/* Custom Flag Icon representations using CSS */
 .flagIcon {
-  width: 56px;
-  height: 40px;
+  width: 52px;
+  height: 36px;
   border-radius: 4px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 2px 6px rgba(27, 43, 72, 0.08);
   overflow: hidden;
   position: relative;
   display: flex;
@@ -147,30 +150,30 @@
 }
 
 .destinationName {
-  font-size: 1.05rem;
+  font-size: 1rem;
   font-weight: 700;
   color: var(--primary-navy);
 }
 
 /* University Placement & Careers Section */
 .placementSection {
-  background-color: var(--bg-light);
-  border-top: 1px solid var(--border-color);
-  border-bottom: 1px solid var(--border-color);
+  background-color: var(--bg-white); /* Pure White Canvas */
+  border-top: var(--tonal-lift-border);
+  border-bottom: var(--tonal-lift-border);
 }
 
 .splitSectionGrid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 4rem;
+  gap: 3rem;
 }
 
 .serviceCard {
   background-color: var(--bg-white);
-  border: 1px solid var(--border-color);
-  border-radius: var(--radius-xl);
+  border: var(--tonal-lift-border);
+  border-radius: var(--radius-card);
   padding: 3rem 2.5rem;
-  box-shadow: var(--shadow-md);
+  box-shadow: var(--tonal-lift-shadow);
   display: flex;
   flex-direction: column;
   gap: 1.5rem;
@@ -178,7 +181,8 @@
 }
 
 .serviceCard:hover {
-  box-shadow: var(--shadow-lg);
+  transform: translateY(-4px);
+  box-shadow: 0 12px 30px rgba(27, 43, 72, 0.08);
 }
 
 .serviceHeader {
@@ -188,28 +192,29 @@
 }
 
 .serviceHeaderIcon {
-  width: 50px;
-  height: 50px;
-  border-radius: 12px;
+  width: 46px;
+  height: 46px;
+  border-radius: var(--radius-btn);
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: var(--accent-red-light);
-  color: var(--accent-red);
+  background-color: var(--border-color);
+  color: var(--primary-navy);
   font-size: 1.25rem;
 }
 
-.serviceCard:nth-child(2) .serviceHeaderIcon {
-  background-color: var(--accent-gold-light);
-  color: var(--accent-gold-hover);
+.serviceCard:hover .serviceHeaderIcon {
+  background-color: var(--primary-navy);
+  color: var(--accent-gold);
 }
 
 .serviceHeader h3 {
   font-size: 1.5rem;
+  font-weight: 700;
 }
 
 .serviceCardText {
-  color: var(--text-medium);
+  color: var(--text-body);
   font-size: 1.05rem;
   line-height: 1.6;
 }
@@ -240,7 +245,7 @@
   width: 6px;
   height: 6px;
   border-radius: 50%;
-  background-color: var(--accent-red);
+  background-color: var(--primary-navy);
 }
 
 .serviceCard:nth-child(2) .subListBullet {
@@ -253,7 +258,7 @@
   }
   .splitSectionGrid {
     grid-template-columns: 1fr;
-    gap: 4rem;
+    gap: 2.5rem;
   }
 }
 
@@ -261,6 +266,9 @@
   .studyAbroadHero {
     grid-template-columns: 1fr;
     gap: 2.5rem;
+  }
+  .serviceCard {
+    padding: 2.5rem 2rem;
   }
 }
 

@@ -49,7 +49,7 @@ export default function Services() {
                   const SrvIcon = srv.icon;
                   return (
                     <div key={index} className="serviceListItem">
-                      <SrvIcon className="serviceListIcon" size={16} />
+                      <SrvIcon className="serviceListIcon" size={16} strokeWidth={1.5} style={{ color: 'var(--primary-navy)' }} />
                       <span>{srv.text}</span>
                     </div>
                   );
@@ -64,15 +64,15 @@ export default function Services() {
               </p>
               <div style={{ display: 'flex', flexDirection: 'column', gap: '0.50rem' }}>
                 <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', fontSize: '0.9rem', color: 'var(--text-dark)' }}>
-                  <CheckCircle size={14} style={{ color: 'var(--accent-gold)' }} />
+                  <CheckCircle size={14} strokeWidth={1.5} style={{ color: 'var(--accent-gold)' }} />
                   <span>Full credit transfer opportunities</span>
                 </div>
                 <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', fontSize: '0.9rem', color: 'var(--text-dark)' }}>
-                  <CheckCircle size={14} style={{ color: 'var(--accent-gold)' }} />
+                  <CheckCircle size={14} strokeWidth={1.5} style={{ color: 'var(--accent-gold)' }} />
                   <span>Post-study work permit path advice</span>
                 </div>
                 <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', fontSize: '0.9rem', color: 'var(--text-dark)' }}>
-                  <CheckCircle size={14} style={{ color: 'var(--accent-gold)' }} />
+                  <CheckCircle size={14} strokeWidth={1.5} style={{ color: 'var(--accent-gold)' }} />
                   <span>Scholarship eligibility maximization</span>
                 </div>
               </div>
@@ -102,7 +102,7 @@ export default function Services() {
           <div className="serviceCard">
             <div className="serviceHeader">
               <div className="serviceHeaderIcon">
-                <Building size={24} />
+                <Building size={24} strokeWidth={1.5} style={{ color: 'var(--primary-navy)' }} />
               </div>
               <div>
                 <span style={{ fontSize: '0.75rem', color: 'var(--accent-red)', fontWeight: 700, uppercase: 'true', letterSpacing: '0.05em' }}>Pathways</span>
@@ -136,7 +136,7 @@ export default function Services() {
           <div className="serviceCard">
             <div className="serviceHeader">
               <div className="serviceHeaderIcon">
-                <UserCheck size={24} />
+                <UserCheck size={24} strokeWidth={1.5} style={{ color: 'var(--primary-navy)' }} />
               </div>
               <div>
                 <span style={{ fontSize: '0.75rem', color: 'var(--accent-gold-hover)', fontWeight: 700, uppercase: 'true', letterSpacing: '0.05em' }}>Employability</span>
