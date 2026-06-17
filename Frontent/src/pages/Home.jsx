@@ -5,6 +5,7 @@ import {
   CheckCircle, ArrowUpRight
 } from 'lucide-react';
 import logo from '../assets/logo.jpg';
+import TiltCard from '../components/TiltCard';
 import '../styles/Home.css';
 
 export default function Home() {
@@ -91,7 +92,7 @@ export default function Home() {
             </div>
             <h1 className="heroTitle">
               Australian College of <br />
-              <span className="text-gradient">Graduate Studies</span>
+              <span className="serif-italic-accent">Graduate Studies</span>
             </h1>
             <p className="heroSubtitle">Building Skills, Creating Futures</p>
             <p className="heroDesc">
@@ -119,13 +120,13 @@ export default function Home() {
             </div>
           </div>
 
-          <div className="heroImageContainer animate-scale-up">
+          <TiltCard className="heroImageContainer animate-scale-up" maxTilt={6}>
             <div className="imageFrame">
               <img src={logo} alt="ACGS Logo Emblem" className="heroLogoImg" />
             </div>
             <div className="heroDecor"></div>
             <div className="heroDecor2"></div>
-          </div>
+          </TiltCard>
         </div>
       </section>
 
@@ -133,35 +134,17 @@ export default function Home() {
       <section className="aboutSnapshot section-padding">
         <div className="container snapshotGrid">
           <div className="snapshotImageCol">
-            <div className="snapshotStatsCard">
-              <h3>Empowering Students</h3>
-              <p style={{ color: '#E2E8F0', fontSize: '0.95rem', marginBottom: '1.5rem' }}>
-                We measure our success through the milestones achieved by our graduates in national and global arenas.
-              </p>
-              <div className="statsGrid">
-                <div className="statItem">
-                  <span className="statNumber">95%</span>
-                  <span className="statLabel">Job Placement</span>
-                </div>
-                <div className="statItem">
-                  <span className="statNumber">25+</span>
-                  <span className="statLabel">Partner Unis</span>
-                </div>
-                <div className="statItem">
-                  <span className="statNumber">1500+</span>
-                  <span className="statLabel">Students Graduated</span>
-                </div>
-                <div className="statItem">
-                  <span className="statNumber">100%</span>
-                  <span className="statLabel">Practical Focus</span>
-                </div>
-              </div>
-            </div>
+            <TiltCard className="snapshotGraphicCard" maxTilt={5}>
+              <span className="graphicCardBadge">EXCELLENCE</span>
+              <h3>Sri Lanka's Leading Academic Center</h3>
+              <p>We measure our success through the milestones achieved by our graduates in national and global arenas.</p>
+              <div className="graphicCardPattern"></div>
+            </TiltCard>
           </div>
 
           <div className="snapshotTextCol">
             <span className="subTitle">About ACGS</span>
-            <h2 className="snapshotTitle">Bridging Academic Learning with Practical Skills</h2>
+            <h2 className="snapshotTitle">Bridging Academic Learning with <br /><span className="serif-italic-accent">Practical Skills</span></h2>
             <p className="snapshotDesc">
               Australian College of Graduate Studies (ACGS) provides quality education that combines academic learning with practical skills, preparing students for global careers and higher education progression.
             </p>
@@ -186,6 +169,28 @@ export default function Home() {
         </div>
       </section>
 
+      {/* STATS BANNER */}
+      <section className="statsBannerSection">
+        <div className="container statsBannerGrid">
+          <div className="statsBannerItem">
+            <span className="statsBannerNumber">95%</span>
+            <span className="statsBannerLabel">Job Placement</span>
+          </div>
+          <div className="statsBannerItem">
+            <span className="statsBannerNumber">25+</span>
+            <span className="statsBannerLabel">Partner Unis</span>
+          </div>
+          <div className="statsBannerItem">
+            <span className="statsBannerNumber">1500+</span>
+            <span className="statsBannerLabel">Students Graduated</span>
+          </div>
+          <div className="statsBannerItem">
+            <span className="statsBannerNumber">100%</span>
+            <span className="statsBannerLabel">Practical Focus</span>
+          </div>
+        </div>
+      </section>
+
       {/* WHY CHOOSE ACGS */}
       <section className="whyChoose section-padding">
         <div className="container">
@@ -195,18 +200,20 @@ export default function Home() {
             <p>We are dedicated to providing student-centric systems that make high-quality tertiary education accessible, modern, and career-oriented.</p>
           </div>
 
-          <div className="cardsGrid">
+          <div className="cardsGrid staggeredGrid">
             {whyChooseItems.map((item, index) => {
               const Icon = item.icon;
               const isAchievement = Icon === GraduationCap;
+              const iconColor = isAchievement ? 'var(--accent-gold)' : 'var(--primary-navy)';
+              const iconBg = isAchievement ? 'rgba(212, 175, 55, 0.1)' : 'rgba(27, 43, 72, 0.08)';
               return (
-                <div key={index} className="featureCard">
-                  <div className="iconWrapper" style={{ color: isAchievement ? 'var(--accent-gold)' : 'var(--primary-navy)' }}>
+                <TiltCard key={index} className="featureCard" maxTilt={8}>
+                  <div className="iconWrapper" style={{ color: iconColor, backgroundColor: iconBg }}>
                     <Icon size={22} strokeWidth={1.5} />
                   </div>
                   <h3 className="featureTitle">{item.title}</h3>
                   <p className="featureDesc">{item.desc}</p>
-                </div>
+                </TiltCard>
               );
             })}
           </div>
@@ -222,30 +229,38 @@ export default function Home() {
             <p>Explore our wide range of qualifications structured from foundation levels up to advanced higher national diplomas.</p>
           </div>
 
-          <div className="overviewGrid">
-            {overviews.map((ov, index) => (
-              <div key={index} className="overviewCard">
-                <div className="overviewCardHeader">
-                  <h3>{ov.title}</h3>
-                </div>
-                <div className="overviewCardBody">
-                  <div className="levelList">
-                    {ov.levels.map((lvl, lidx) => (
-                      <div key={lidx} className="levelItem">
-                        <div className="levelDot"></div>
-                        <span>{lvl}</span>
-                      </div>
-                    ))}
+          <div className="overviewGrid bentoGrid">
+            {overviews.map((ov, index) => {
+              const bentoClasses = [
+                'bentoCardVertical',
+                'bentoCardHorizontal',
+                'bentoCardSquare1',
+                'bentoCardSquare2'
+              ];
+              return (
+                <TiltCard key={index} className={`overviewCard ${bentoClasses[index]}`} maxTilt={6}>
+                  <div className="overviewCardHeader">
+                    <h3>{ov.title}</h3>
                   </div>
-                  <button 
-                    className="overviewCardLink"
-                    onClick={() => handleScrollToSection('courses')}
-                  >
-                    View Curriculums <ArrowUpRight size={14} strokeWidth={1.5} />
-                  </button>
-                </div>
-              </div>
-            ))}
+                  <div className="overviewCardBody">
+                    <div className="levelList">
+                      {ov.levels.map((lvl, lidx) => (
+                        <div key={lidx} className="levelItem">
+                          <div className="levelDot"></div>
+                          <span>{lvl}</span>
+                        </div>
+                      ))}
+                    </div>
+                    <button 
+                      className="overviewCardLink"
+                      onClick={() => handleScrollToSection('courses')}
+                    >
+                      View Curriculums <ArrowUpRight size={14} strokeWidth={1.5} />
+                    </button>
+                  </div>
+                </TiltCard>
+              );
+            })}
           </div>
         </div>
       </section>

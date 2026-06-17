@@ -1,5 +1,5 @@
 import React from 'react';
-import { MapPin, Phone, Mail, ChevronRight, ArrowUp } from 'lucide-react';
+import { MapPin, Phone, Mail, ChevronRight, ArrowUp, ArrowRight } from 'lucide-react';
 import logo from '../assets/logo.jpg';
 import '../styles/Footer.css';
 
@@ -93,7 +93,7 @@ export default function Footer() {
           {/* Mini Hours Column */}
           <div>
             <h3 className="footerHeading">Quick Hours</h3>
-            <div className="hoursGrid">
+            <div className="hoursGrid" style={{ marginBottom: '1.5rem' }}>
               <div className="hourRow">
                 <span className="hourDay">Mon – Fri:</span>
                 <span className="hourTime">8:30 AM – 5:00 PM</span>
@@ -107,6 +107,19 @@ export default function Footer() {
                 <span className="hourTime">Closed</span>
               </div>
             </div>
+
+            <h3 className="footerHeading">Subscribe</h3>
+            <form className="footerSubscribeForm" onSubmit={(e) => e.preventDefault()}>
+              <input 
+                type="email" 
+                placeholder="Your email address" 
+                className="subscribeInput" 
+                required 
+              />
+              <button type="submit" className="subscribeBtn" aria-label="Subscribe">
+                <ArrowRight size={16} strokeWidth={1.5} style={{ color: 'var(--primary-navy)' }} />
+              </button>
+            </form>
           </div>
         </div>
 

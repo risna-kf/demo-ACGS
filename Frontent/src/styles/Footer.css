@@ -200,3 +200,49 @@
     text-align: center;
   }
 }
+
+/* Subscribe Form styling matching Google Stitch prototype */
+.footerSubscribeForm {
+  display: flex;
+  background-color: var(--primary-navy-dark); /* Deep navy backdrop, darker than container */
+  border-radius: var(--radius-btn);
+  padding: 4px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  width: 100%;
+  max-width: 280px;
+}
+
+.subscribeInput {
+  flex-grow: 1;
+  background: transparent;
+  border: none;
+  outline: none;
+  padding: 0.6rem 0.8rem;
+  color: var(--bg-white);
+  font-family: var(--font-body);
+  font-size: 0.9rem;
+  width: 100%;
+}
+
+.subscribeInput::placeholder {
+  color: rgba(255, 255, 255, 0.4);
+}
+
+.subscribeBtn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--accent-gold);
+  border: none;
+  outline: none;
+  width: 36px;
+  height: 36px;
+  border-radius: var(--radius-btn);
+  cursor: pointer;
+  transition: var(--transition-normal);
+}
+
+.subscribeBtn:hover {
+  background-color: #BD9B2F;
+  transform: scale(1.02);
+}

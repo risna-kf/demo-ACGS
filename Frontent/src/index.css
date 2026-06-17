@@ -1,12 +1,14 @@
-@import url('https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600;700;800;900&family=Inter:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600;700;800;900&family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@1,600&display=swap');
 
 :root {
   /* Design Brief Color Palette */
   --primary-navy: #1B2B48;      /* The Anchor */
   --primary-hover: #2A3B58;     /* Lighter navy tint on hover */
+  --primary-navy-dark: #0B132B; /* Deeper background navy */
   --accent-gold: #D4AF37;       /* The Highlight (Presitge/Achievement) */
   --bg-white: #FFFFFF;          /* The Canvas */
   --bg-neutral: #FFFFFF;        /* Keep backgrounds pure white */
+  --bg-warm-beige: #F7F6F3;     /* Warm beige background */
   
   --border-color: #E2E8F0;      /* Soft slate-gray */
   --text-dark: #1B2B48;         /* Headlines in Deep Navy */
@@ -20,9 +22,10 @@
   /* Soft Precision Dimensions */
   --radius-btn: 0.5rem;         /* 8px button corner radius */
   --radius-card: 12px;          /* 12px panel/modal radius */
+  --radius-xl: 16px;            /* 16px rounded corners */
   
   /* Tonal Lift Elevation (diffused 10% opacity navy shadow + 1px border) */
-  --tonal-lift-shadow: 0 8px 24px rgba(27, 43, 72, 0.05), 0 2px 6px rgba(27, 43, 72, 0.03);
+  --tonal-lift-shadow: 0 10px 30px rgba(11, 19, 43, 0.04), 0 2px 8px rgba(11, 19, 43, 0.02);
   --tonal-lift-border: 1px solid var(--border-color);
   
   /* Glass Panel (85% Opacity White + 12px Backdrop Blur) */
@@ -63,6 +66,14 @@ h1, h2, h3, h4, h5, h6 {
   color: var(--primary-navy);
   letter-spacing: -0.02em;      /* Tight custom-type look */
   line-height: 1.25;
+}
+
+.serif-italic-accent {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-style: italic;
+  font-weight: 600;
+  color: var(--accent-gold);
+  text-transform: none;
 }
 
 a {
